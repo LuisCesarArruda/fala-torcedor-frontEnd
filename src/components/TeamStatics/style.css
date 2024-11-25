@@ -1,0 +1,48 @@
+.team-statistics-container {
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 70vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.team-statistics-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.teams-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.team-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b3b3b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-name {
+    font-weight: bold;
+}
+
+.team-fans {
+    color: #a0a0a0;
+}
+
+@media (max-width: 768px) {
+    .team-statistics-container {
+        padding: 15px;
+    }
+}
