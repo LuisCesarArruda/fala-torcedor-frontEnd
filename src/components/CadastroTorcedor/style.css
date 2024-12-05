@@ -1,5 +1,4 @@
-/* Estilos base */
-.register-supporter-container {
+.supporter-register-container {
     width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -10,20 +9,21 @@
     font-family: Arial, sans-serif;
 }
 
-.register-supporter-container h2 {
+.supporter-register-container h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
-.register-supporter-form label {
+
+.supporter-register-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #d3d3d3;
 }
 
-.register-supporter-form input {
+.supporter-register-form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -34,17 +34,19 @@
     font-size: 14px;
 }
 
-.register-supporter-form input:focus {
+.supporter-register-form input:focus {
     outline: 2px solid #00b894;
 }
 
-.buttons-container {
+
+.supporter-buttons-container {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
 
-.register-button {
+
+.supporter-register-button {
     flex: 1;
     padding: 10px;
     background-color: #00b894;
@@ -53,14 +55,15 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-.register-button:hover {
+.supporter-register-button:hover {
     background-color: #019d79;
 }
 
-.clear-button {
+.supporter-clear-button {
     flex: 1;
     padding: 10px;
     background-color: #d63031;
@@ -69,40 +72,38 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-.clear-button:hover {
+.supporter-clear-button:hover {
     background-color: #b02327;
 }
 
-.time-container {
-    padding-top: 10px;
-}
 
 @media (max-width: 768px) {
-    .register-supporter-container {
+    .supporter-register-container {
         width: 90%;
         padding: 15px;
         margin: 30px auto;
     }
 
-    .register-supporter-container h2 {
+    .supporter-register-container h2 {
         font-size: 1.5rem;
     }
 
-    .register-supporter-form input {
+    .supporter-register-form input {
         font-size: 13px;
         padding: 8px;
     }
 
-    .buttons-container {
+    .supporter-buttons-container {
         flex-direction: column;
         gap: 10px;
     }
 
-    .register-button,
-    .clear-button {
+    .supporter-register-button,
+    .supporter-clear-button {
         width: 100%;
         font-size: 14px;
         padding: 10px;
@@ -110,16 +111,16 @@
 }
 
 @media (max-width: 480px) {
-    .register-supporter-container {
+    .supporter-register-container {
         padding: 10px;
     }
 
-    .register-supporter-form input {
+    .supporter-register-form input {
         font-size: 12px;
     }
 
-    .register-button,
-    .clear-button {
+    .supporter-register-button,
+    .supporter-clear-button {
         font-size: 12px;
         padding: 8px;
     }

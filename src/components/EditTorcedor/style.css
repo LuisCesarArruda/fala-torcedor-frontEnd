@@ -1,5 +1,4 @@
-/* Estilos base */
-.form-container {
+.edit-team-container {
     width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -9,21 +8,19 @@
     color: #ffffff;
     font-family: Arial, sans-serif;
 }
-
-.form-container h2 {
+.edit-team-container h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
 }
-
-.form-container label {
+.edit-team-container label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: #d3d3d3;
 }
 
-.form-container input {
+.edit-team-container input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -33,18 +30,16 @@
     color: #fff;
     font-size: 14px;
 }
-
-.form-input:focus {
+.edit-team-container input:focus {
     outline: 2px solid #00b894;
 }
-
-.button-group {
+.buttons-container {
     display: flex;
     justify-content: space-between;
     gap: 10px;
 }
 
-.button-register {
+.save-button{
     flex: 1;
     padding: 10px;
     background-color: #00b894;
@@ -55,12 +50,24 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.button-register:hover {
-    background-color: #019d79;
+.save-button:hover {
+    background-color: #00b894b6;
 }
-
-.button-clear {
+.cancel-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #838181;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.cancel-button:hover{
+    background-color: #838181b6;
+}
+.delete-button{
     flex: 1;
     padding: 10px;
     background-color: #d63031;
@@ -71,52 +78,6 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.button-clear:hover {
-    background-color: #b02327;
-}
-
-@media (max-width: 768px) {
-    .form-container {
-        width: 90%;
-        padding: 15px;
-        margin: 30px auto;
-    }
-
-    .form-container h2 {
-        font-size: 1.5rem;
-    }
-
-    .form-input {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    .button-group {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .button-register,
-    .button-clear {
-        width: 100%;
-        font-size: 14px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .form-container {
-        padding: 10px;
-    }
-
-    .form-input {
-        font-size: 12px;
-    }
-
-    .button-register,
-    .button-clear{
-        font-size: 12px;
-        padding: 8px;
-    }
+.delete-button:hover{
+    background-color: #d63030b6;
 }

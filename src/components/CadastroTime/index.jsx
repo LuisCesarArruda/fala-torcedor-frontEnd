@@ -1,10 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 export const CadastroTime = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        name: "",
+        nome: "",
         localizacao: "",
     });
 
@@ -24,23 +26,25 @@ export const CadastroTime = () => {
         try {
             const response = await axios.post(
                 "http://localhost:8888/time/new",
-                formData,
+                {
+                    nome: formData.nome, 
+                    localizacao: formData.localizacao,
+                },
                 {
                     headers: {
                         "Content-Type": "application/json",
                     },
                 }
             );
-
+            console.log("Cadastro realizado com sucesso:", response.data);
             setMessage("Time cadastrado com sucesso!");
-            console.log("Time cadastrado:", response.data);
-
+            
             setFormData({
-                name: "",
+                nome: "", 
                 localizacao: "",
             });
+            navigate("/");
         } catch (error) {
-            
             setMessage(
                 error.response?.data?.message ||
                     "Erro desconhecido ao cadastrar o time."
@@ -51,22 +55,23 @@ export const CadastroTime = () => {
 
     const handleCancel = () => {
         setFormData({
-            name: "",
+            nome: "",
             localizacao: "",
         });
         setMessage("");
+        navigate("/")
     };
 
     return (
-        <div className="register-team-container">
+        <div className="form-container">
             <h2>Cadastro do Time</h2>
-            <form className="register-team-form" onSubmit={handleSubmit}>
+            <form className="form-label" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Nome</label>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
+                        id="nome"
+                        name="nome"
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Nome"
@@ -86,14 +91,15 @@ export const CadastroTime = () => {
                     />
                 </div>
 
-                <div className="buttons-container">
-                    <button type="submit" className="register-button">
+                <div className="button-group">
+                    <button type="submit" className="button-register">
                         Cadastrar
                     </button>
                     <button
                         type="button"
-                        className="clear-button"
+                        className="button-clear"
                         onClick={handleCancel}
+                        
                     >
                         Cancelar
                     </button>

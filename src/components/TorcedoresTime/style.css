@@ -1,0 +1,59 @@
+.team-fans-container{
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    min-height: 70vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+.team-fans-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.fans-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.fan-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3b3b3b;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.clear-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #d63031;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.edit-button{
+    flex: 1;
+    padding: 10px;
+    background-color: #00b894;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.editbutton-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}

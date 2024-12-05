@@ -1,57 +1,72 @@
 import { useState } from "react";
-import { PhoneInput } from "react-international-phone";
-import "react-international-phone/style.css";
 import axios from "axios";
 import "./style.css";
-
+import { useNavigate } from "react-router-dom";
 export const CadastroTorcedor = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        name: "",
+        nome: "",
         email: "",
-        phone: "",
-        team: "",
+        telefone: "",
+        time: "",
     });
+    const [message, setMessage] = useState("");
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         try {
             const response = await axios.post(
-                "/torcedor/new",
-                formData
-            ); 
+                "http://localhost:8888/torcedor/new",
+                formData,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
             console.log("Cadastro realizado com sucesso:", response.data);
 
             setFormData({
-                name: "",
+                nome: "",
                 email: "",
-                phone: "",
-                team: "",
+                telefone: "",
+                time: "",
             });
+            navigate("/");
         } catch (error) {
             console.error("Erro ao cadastrar torcedor:", error);
         }
     };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target;  
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value,
+            [name]: value, 
         }));
+    };
+    
+    const handleCancel = () => {
+        setFormData({
+            nome: "",
+            localizacao: "",
+        });
+        setMessage("");
+        navigate("/");
     };
 
     return (
-        <div className="register-supporter-container">
+        <div className="supporter-register-container">
             <h2>Cadastro de torcedor</h2>
-            <form className="register-supporter-form" onSubmit={handleSubmit}>
+            <form className="supporter-register-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Nome</label>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
+                        id="nome"
+                        name="nome"
+                        value={formData.nome}
                         onChange={handleChange}
                         placeholder="Nome"
                         required
@@ -70,38 +85,42 @@ export const CadastroTorcedor = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="phone">Telefone</label>
-                    <PhoneInput
-                        id="phone"
-                        name="phone"
-                        defaultCountry="br"
-                        value={formData.phone}
-                        onChange={(phone) =>
-                            setFormData({ ...formData, phone })
-                        }
-                    />
+                    <label>Telefone:</label>
+                
+                <input
+                    type="text"
+                    name="telefone"
+                    value={formData.telefone}
+                    onChange={handleChange}
+                    placeholder="+xx (xx) xxxxx-xxxx"
+                />
                 </div>
-                <div className="time-container">
+                <div className="supporter-time-container">
                     <label htmlFor="team">Time</label>
                     <input
                         type="text"
-                        id="team"
-                        name="team"
-                        value={formData.team}
+                        id="time"
+                        name="time"
+                        value={formData.time}
                         onChange={handleChange}
                         placeholder="Time"
                         required
                     />
                 </div>
 
-                <div className="buttons-container">
-                    <button type="submit" className="register-button">
+                <div className="supporter-buttons-container">
+                    <button type="submit" className="supporter-register-button">
                         Cadastrar
                     </button>
-                    <button type="button" className="clear-button">
+                    <button
+                        type="button"
+                        className="supporter-clear-button"
+                        onClick={handleCancel}
+                    >
                         Cancelar
                     </button>
                 </div>
+                {message && <p>{message}</p>}
             </form>
         </div>
     );
