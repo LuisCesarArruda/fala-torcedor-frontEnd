@@ -10,7 +10,7 @@ import axios from "axios";
 function Home() {
     const [teams, setTeams] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [selectedTeam, setSelectedTeam] = useState(null); // Estado para o time selecionado
+    const [selectedTeam, setSelectedTeam] = useState(null); 
 
     useEffect(() => {
         const fetchTeams = async () => {
