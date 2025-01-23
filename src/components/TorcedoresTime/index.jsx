@@ -28,9 +28,7 @@ export const TorcedoresTime = ({ team, onBack }) => {
         }
     }, [team]);
 
-    const handleEditClick = (fanId) => {
-        navigate(`/editarTorcedor/${fanId}`);
-    };
+    
 
     const handleEditTeam = ()=>{
         navigate(`/editartime/${team.id}`);
@@ -47,7 +45,7 @@ export const TorcedoresTime = ({ team, onBack }) => {
                         <div
                             key={fan.id} 
                             className="fan-card"
-                            onClick={() => handleEditClick(fan.id)} 
+                            
                         >
                             <span>{fan.nome}</span>{" "}
                             

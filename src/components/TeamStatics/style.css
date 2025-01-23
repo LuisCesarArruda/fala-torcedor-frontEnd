@@ -1,3 +1,21 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.toggle-view-button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.toggle-view-button:hover {
+    background-color: #218838;
+}
 .team-statistics-container {
     background-color: #2b2b2b;
     border-radius: 10px;
@@ -8,12 +26,38 @@
     min-height: 70vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     color: #fff;
+    
+}
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tab-button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #444;
+}
+
+.tab-button.active {
+    background-color: #00ff00;
+    color: #000;
+    font-weight: bold;
 }
 
 .team-statistics-container h2 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
+    
 }
 
 .teams-list {
@@ -31,7 +75,9 @@
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
+
 
 .team-name 
 .team-localizacao {

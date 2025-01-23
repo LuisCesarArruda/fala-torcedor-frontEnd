@@ -63,6 +63,33 @@
     background-color: #019d79;
 }
 
+.supporter-time-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc; /* mesma cor dos inputs */
+    border-radius: 5px;
+    background-color: #2e2e2e; /* mesma cor de fundo */
+    color: #fff; /* texto branco */
+    outline: none;
+    appearance: none; /* remove a seta padrão no Chrome/Firefox */
+}
+
+
+.supporter-time-container select option {
+    background-color: #2e2e2e; /* mesma cor do select */
+    color: #fff; /* mantém texto branco */
+}
+
+/* Adicionando seta customizada */
+.supporter-time-container select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23FFF' d='M2 0L0 2h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
 .supporter-clear-button {
     flex: 1;
     padding: 10px;

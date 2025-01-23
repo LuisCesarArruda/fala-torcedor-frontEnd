@@ -18,10 +18,11 @@
     margin-bottom: 5px;
     font-weight: bold;
     color: #d3d3d3;
+
 }
 
 .edit-team-container input {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-bottom: 15px;
     border: none;

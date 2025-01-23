@@ -8,6 +8,7 @@ export const CadastroTime = () => {
     const [formData, setFormData] = useState({
         nome: "",
         localizacao: "",
+        serie: ""
     });
 
     const [message, setMessage] = useState("");
@@ -29,6 +30,7 @@ export const CadastroTime = () => {
                 {
                     nome: formData.nome, 
                     localizacao: formData.localizacao,
+                    serie: formData.serie,
                 },
                 {
                     headers: {
@@ -42,6 +44,7 @@ export const CadastroTime = () => {
             setFormData({
                 nome: "", 
                 localizacao: "",
+                serie: "",
             });
             navigate("/");
         } catch (error) {
@@ -57,6 +60,7 @@ export const CadastroTime = () => {
         setFormData({
             nome: "",
             localizacao: "",
+            serie: "",
         });
         setMessage("");
         navigate("/")
@@ -67,14 +71,14 @@ export const CadastroTime = () => {
             <h2>Cadastro do Time</h2>
             <form className="form-label" onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">Nome</label>
+                    <label htmlFor="nome">Time</label>
                     <input
                         type="text"
                         id="nome"
                         name="nome"
-                        value={formData.name}
+                        value={formData.nome}
                         onChange={handleChange}
-                        placeholder="Nome"
+                        placeholder="Time"
                         required
                     />
                 </div>
@@ -90,6 +94,18 @@ export const CadastroTime = () => {
                         required
                     />
                 </div>
+                <div>
+                    <label htmlFor="serie">Série</label>
+                    <input
+                        type="text"
+                        id="serie"
+                        name="serie"
+                        value={formData.serie}
+                        onChange={handleChange}
+                        placeholder="Série"
+                        required
+                    />
+                </div>
 
                 <div className="button-group">
                     <button type="submit" className="button-register">
@@ -99,7 +115,6 @@ export const CadastroTime = () => {
                         type="button"
                         className="button-clear"
                         onClick={handleCancel}
-                        
                     >
                         Cancelar
                     </button>

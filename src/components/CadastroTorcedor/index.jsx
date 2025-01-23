@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
+
 export const CadastroTorcedor = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -10,7 +11,20 @@ export const CadastroTorcedor = () => {
         telefone: "",
         time: "",
     });
+    const [times, setTimes] = useState([]); // Estado para armazenar os times
     const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        const fetchTimes = async () => {
+            try {
+                const response = await axios.get("http://localhost:8888/times");
+                setTimes(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar times:", error);
+            }
+        };
+        fetchTimes();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -40,17 +54,19 @@ export const CadastroTorcedor = () => {
     };
 
     const handleChange = (e) => {
-        const { name, value } = e.target;  
+        const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
-            [name]: value, 
+            [name]: value,
         }));
     };
-    
+
     const handleCancel = () => {
         setFormData({
             nome: "",
-            localizacao: "",
+            email: "",
+            telefone: "",
+            time: "",
         });
         setMessage("");
         navigate("/");
@@ -86,26 +102,30 @@ export const CadastroTorcedor = () => {
                 </div>
                 <div>
                     <label>Telefone:</label>
-                
-                <input
-                    type="text"
-                    name="telefone"
-                    value={formData.telefone}
-                    onChange={handleChange}
-                    placeholder="+xx (xx) xxxxx-xxxx"
-                />
+                    <input
+                        type="text"
+                        name="telefone"
+                        value={formData.telefone}
+                        onChange={handleChange}
+                        placeholder="+xx (xx) xxxxx-xxxx"
+                    />
                 </div>
                 <div className="supporter-time-container">
                     <label htmlFor="team">Time</label>
-                    <input
-                        type="text"
+                    <select
                         id="time"
                         name="time"
                         value={formData.time}
                         onChange={handleChange}
-                        placeholder="Time"
                         required
-                    />
+                    >
+                        <option value="">Selecione um time</option>
+                        {times.map((team) => (
+                            <option key={team.id} value={team.nome}>
+                                {team.nome}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <div className="supporter-buttons-container">

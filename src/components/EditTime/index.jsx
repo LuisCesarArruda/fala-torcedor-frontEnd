@@ -4,11 +4,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./style.css";
 
 export const EditarTime = () => {
-    const { id } = useParams(); // Obtém o ID da URL
+    const { id } = useParams();
     const [formData, setFormData] = useState({
         id: "",
         nome: "",
         localizacao: "",
+        divisao: "",
     });
     const navigate = useNavigate();
 
@@ -23,7 +24,7 @@ export const EditarTime = () => {
                     id: response.data.id,
                     nome: response.data.nome || "",
                     localizacao: response.data.localizacao || "",
-                    
+                    divisao: response.data.divisao || "",
                 });
             } catch (error) {
                 console.error("Erro ao carregar time:", error);
@@ -42,23 +43,23 @@ export const EditarTime = () => {
     };
 
     const handleSave = async () => {
-        const { id, nome, localizacao } = formData;
+        const { id, nome, localizacao, divisao } = formData;
 
         try {
             await axios.put(`http://localhost:8888/time/${id}`, {
                 nome,
                 localizacao,
+                divisao,
             });
             alert("Informações atualizadas com sucesso!");
             navigate("/");
         } catch (error) {
             console.error("Erro ao salvar time:", error);
-            
         }
     };
 
     const handleCancel = () => {
-        navigate("/"); 
+        navigate("/");
     };
 
     const handleDelete = async () => {
@@ -75,7 +76,7 @@ export const EditarTime = () => {
         try {
             await axios.delete(`http://localhost:8888/time/${id}`);
             alert("time excluído com sucesso!");
-            navigate("/"); 
+            navigate("/");
         } catch (error) {
             console.error("Erro ao deletar time:", error);
             alert("Erro ao excluir o time.");
@@ -86,21 +87,34 @@ export const EditarTime = () => {
         <div className="edit-team-container">
             <h2>Editar time</h2>
             <form>
-                <label>Nome:</label>
-                <input
-                    type="text"
-                    name="nome"
-                    value={formData.nome || ""}
-                    onChange={handleInputChange}
-                />
-                <label>localização:</label>
-                <input
-                    type="localizacao"
-                    name="localizacao"
-                    value={formData.localizacao || ""}
-                    onChange={handleInputChange}
-                />
-                
+                <div>
+                    <label>Time:</label>
+                    <input
+                        type="text"
+                        name="nome"
+                        value={formData.nome || ""}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div>
+                    <label>localização:</label>
+                    <input
+                        type="localizacao"
+                        name="localizacao"
+                        value={formData.localizacao || ""}
+                        onChange={handleInputChange}
+                    />
+                </div>
+                <div>
+                    <label>Divisao:</label>
+                    <input
+                        type="divisao"
+                        name="divisao"
+                        value={formData.divisao || ""}
+                        onChange={handleInputChange}
+                    />
+                </div>
+
                 <div className="buttons-container">
                     <button
                         type="button"
