@@ -1,8 +1,5 @@
-import "./style.css"
+import './style.css';
 
-export const Stripes =()=> {
-
-    return(
-        <div className="stripes"/>
-    )
-}
+export const Stripes = () => {
+  return <div className="stripes" />;
+};
