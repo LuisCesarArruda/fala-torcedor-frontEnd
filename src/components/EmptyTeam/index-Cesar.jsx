@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 import './style.css';
-=======
-import "./style.css";
->>>>>>> Stashed changes
 
 export const EmptyTeam = () => {
   return (

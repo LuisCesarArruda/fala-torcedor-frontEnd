@@ -24,18 +24,11 @@
       "devDependencies": {
         "@eslint/js": "^9.18.0",
         "eslint": "^8.57.1",
-<<<<<<< Updated upstream
         "eslint-config-prettier": "^10.0.1",
         "eslint-plugin-prettier": "^5.2.3",
         "eslint-plugin-react": "^7.37.4",
         "globals": "^15.14.0",
         "prettier": "3.4.2"
-=======
-        "eslint-config-prettier": "^7.2.0",
-        "eslint-plugin-prettier": "^3.3.1",
-        "eslint-plugin-react": "^7.22.0",
-        "prettier": "^2.2.1"
->>>>>>> Stashed changes
       }
     },
     "node_modules/@adobe/css-tools": {
@@ -7860,7 +7853,6 @@
       }
     },
     "node_modules/eslint-config-prettier": {
-<<<<<<< Updated upstream
       "version": "10.0.1",
       "resolved": "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-10.0.1.tgz",
       "integrity": "sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==",
@@ -7868,15 +7860,6 @@
       "license": "MIT",
       "bin": {
         "eslint-config-prettier": "build/bin/cli.js"
-=======
-      "version": "7.2.0",
-      "resolved": "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz",
-      "integrity": "sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==",
-      "dev": true,
-      "license": "MIT",
-      "bin": {
-        "eslint-config-prettier": "bin/cli.js"
->>>>>>> Stashed changes
       },
       "peerDependencies": {
         "eslint": ">=7.0.0"
@@ -8100,7 +8083,6 @@
       }
     },
     "node_modules/eslint-plugin-prettier": {
-<<<<<<< Updated upstream
       "version": "5.2.3",
       "resolved": "https://registry.npmjs.org/eslint-plugin-prettier/-/eslint-plugin-prettier-5.2.3.tgz",
       "integrity": "sha512-qJ+y0FfCp/mQYQ/vWQ3s7eUlFEL4PyKfAJxsnYTJ4YT73nsJBWqmEpFryxV9OeUiqmsTsYJ5Y+KDNaeP31wrRw==",
@@ -8126,24 +8108,6 @@
         "@types/eslint": {
           "optional": true
         },
-=======
-      "version": "3.4.1",
-      "resolved": "https://registry.npmjs.org/eslint-plugin-prettier/-/eslint-plugin-prettier-3.4.1.tgz",
-      "integrity": "sha512-htg25EUYUeIhKHXjOinK4BgCcDwtLHjqaxCDsMy5nbnUMkKFvIhMVCp+5GFUXQ4Nr8lBsPqtGAqBenbpFqAA2g==",
-      "dev": true,
-      "license": "MIT",
-      "dependencies": {
-        "prettier-linter-helpers": "^1.0.0"
-      },
-      "engines": {
-        "node": ">=6.0.0"
-      },
-      "peerDependencies": {
-        "eslint": ">=5.0.0",
-        "prettier": ">=1.13.0"
-      },
-      "peerDependenciesMeta": {
->>>>>>> Stashed changes
         "eslint-config-prettier": {
           "optional": true
         }
@@ -9402,7 +9366,6 @@
         "which": "bin/which"
       }
     },
-<<<<<<< Updated upstream
     "node_modules/globals": {
       "version": "15.14.0",
       "resolved": "https://registry.npmjs.org/globals/-/globals-15.14.0.tgz",
@@ -9416,8 +9379,6 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
-=======
->>>>>>> Stashed changes
     "node_modules/globalthis": {
       "version": "1.0.4",
       "resolved": "https://registry.npmjs.org/globalthis/-/globalthis-1.0.4.tgz",
@@ -15392,7 +15353,6 @@
       }
     },
     "node_modules/prettier": {
-<<<<<<< Updated upstream
       "version": "3.4.2",
       "resolved": "https://registry.npmjs.org/prettier/-/prettier-3.4.2.tgz",
       "integrity": "sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==",
@@ -15403,18 +15363,6 @@
       },
       "engines": {
         "node": ">=14"
-=======
-      "version": "2.8.8",
-      "resolved": "https://registry.npmjs.org/prettier/-/prettier-2.8.8.tgz",
-      "integrity": "sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==",
-      "dev": true,
-      "license": "MIT",
-      "bin": {
-        "prettier": "bin-prettier.js"
-      },
-      "engines": {
-        "node": ">=10.13.0"
->>>>>>> Stashed changes
       },
       "funding": {
         "url": "https://github.com/prettier/prettier?sponsor=1"

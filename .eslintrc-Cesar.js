@@ -17,11 +17,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-<<<<<<< Updated upstream
   plugins: ['react'],
-=======
-  plugins: ['react','prettier'],
->>>>>>> Stashed changes
   settings: {
     react: {
       version: 'detect',

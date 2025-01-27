@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import P from 'prop-types';
 
 import React from 'react';
@@ -6,13 +5,6 @@ import './style.css';
 import { useNavigate } from 'react-router-dom';
 
 export const TorcedorStatics = ({ fans }) => {
-=======
-import React from 'react';
-import './style.css';
-import { useNavigate } from 'react-router-dom';
-
-export const TorcedorStatics = ({ fans = [] }) => {
->>>>>>> Stashed changes
   const navigate = useNavigate();
   const handleEditClick = (fanId) => {
     navigate(`/editarTorcedor/${fanId}`);
@@ -30,11 +22,8 @@ export const TorcedorStatics = ({ fans = [] }) => {
       )}
     </div>
   );
-<<<<<<< Updated upstream
 };
 
 TorcedorStatics.propTypes = {
   fans: P.array.isRequired,
-=======
->>>>>>> Stashed changes
 };

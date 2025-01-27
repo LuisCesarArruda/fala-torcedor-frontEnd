@@ -13,19 +13,10 @@ export const TorcedoresTime = ({ team, onBack }) => {
   useEffect(() => {
     const fetchFans = async () => {
       try {
-<<<<<<< Updated upstream
         const response = await axios.get(`http://localhost:8888/torcedor/time/${team.nome}`);
         setFans(response.data);
       } catch (error) {
         console.error('Erro ao carregar torcedores:', error);
-=======
-        const response = await axios.get(
-          `http://localhost:8888/torcedor/time/${team.nome}`
-        );
-        setFans(response.data);
-      } catch (error) {
-        console.error("Erro ao carregar torcedores:", error);
->>>>>>> Stashed changes
       } finally {
         setLoading(false);
       }
@@ -49,11 +40,7 @@ export const TorcedoresTime = ({ team, onBack }) => {
         ) : fans.length > 0 ? (
           fans.map((fan) => (
             <div key={fan.id} className="fan-card">
-<<<<<<< Updated upstream
               <span>{fan.nome}</span>{' '}
-=======
-              <span>{fan.nome}</span>{" "}
->>>>>>> Stashed changes
             </div>
           ))
         ) : (
@@ -70,12 +57,9 @@ export const TorcedoresTime = ({ team, onBack }) => {
       </div>
     </div>
   );
-<<<<<<< Updated upstream
 };
 
 TorcedoresTime.propTypes = {
   team: P.array.isRequired,
   onBack: P.func,
-=======
->>>>>>> Stashed changes
 };

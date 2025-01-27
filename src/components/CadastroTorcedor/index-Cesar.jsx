@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 export const CadastroTorcedor = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-<<<<<<< Updated upstream
     nome: '',
     email: '',
     telefone: '',
@@ -14,30 +13,14 @@ export const CadastroTorcedor = () => {
   });
   const [times, setTimes] = useState([]); // Estado para armazenar os times
   const [message, setMessage] = useState('');
-=======
-    nome: "",
-    email: "",
-    telefone: "",
-    time: "",
-  });
-  const [times, setTimes] = useState([]); // Estado para armazenar os times
-  const [message, setMessage] = useState("");
->>>>>>> Stashed changes
 
   useEffect(() => {
     const fetchTimes = async () => {
       try {
-<<<<<<< Updated upstream
         const response = await axios.get('http://localhost:8888/times');
         setTimes(response.data);
       } catch (error) {
         console.error('Erro ao buscar times:', error);
-=======
-        const response = await axios.get("http://localhost:8888/times");
-        setTimes(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar times:", error);
->>>>>>> Stashed changes
       }
     };
     fetchTimes();
@@ -47,7 +30,6 @@ export const CadastroTorcedor = () => {
     e.preventDefault();
 
     try {
-<<<<<<< Updated upstream
       const response = await axios.post('http://localhost:8888/torcedor/new', formData, {
         headers: {
           'Content-Type': 'application/json',
@@ -64,28 +46,6 @@ export const CadastroTorcedor = () => {
       navigate('/');
     } catch (error) {
       console.error('Erro ao cadastrar torcedor:', error);
-=======
-      const response = await axios.post(
-        "http://localhost:8888/torcedor/new",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log("Cadastro realizado com sucesso:", response.data);
-
-      setFormData({
-        nome: "",
-        email: "",
-        telefone: "",
-        time: "",
-      });
-      navigate("/");
-    } catch (error) {
-      console.error("Erro ao cadastrar torcedor:", error);
->>>>>>> Stashed changes
     }
   };
 
@@ -99,7 +59,6 @@ export const CadastroTorcedor = () => {
 
   const handleCancel = () => {
     setFormData({
-<<<<<<< Updated upstream
       nome: '',
       email: '',
       telefone: '',
@@ -107,15 +66,6 @@ export const CadastroTorcedor = () => {
     });
     setMessage('');
     navigate('/');
-=======
-      nome: "",
-      email: "",
-      telefone: "",
-      time: "",
-    });
-    setMessage("");
-    navigate("/");
->>>>>>> Stashed changes
   };
 
   return (
@@ -158,17 +108,7 @@ export const CadastroTorcedor = () => {
         </div>
         <div className="supporter-time-container">
           <label htmlFor="team">Time</label>
-<<<<<<< Updated upstream
           <select id="time" name="time" value={formData.time} onChange={handleChange} required>
-=======
-          <select
-            id="time"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-          >
->>>>>>> Stashed changes
             <option value="">Selecione um time</option>
             {times.map((team) => (
               <option key={team.id} value={team.nome}>
@@ -182,15 +122,7 @@ export const CadastroTorcedor = () => {
           <button type="submit" className="supporter-register-button">
             Cadastrar
           </button>
-<<<<<<< Updated upstream
           <button type="button" className="supporter-clear-button" onClick={handleCancel}>
-=======
-          <button
-            type="button"
-            className="supporter-clear-button"
-            onClick={handleCancel}
-          >
->>>>>>> Stashed changes
             Cancelar
           </button>
         </div>

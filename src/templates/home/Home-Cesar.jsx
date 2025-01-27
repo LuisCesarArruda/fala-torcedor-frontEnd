@@ -16,7 +16,6 @@ function Home() {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-<<<<<<< Updated upstream
         const response = await axios.get('http://localhost:8888/times');
         setTeams(response.data);
       } catch (error) {
@@ -25,16 +24,6 @@ function Home() {
           return;
         }
         console.error('Erro ao carregar os times:', error);
-=======
-        const response = await axios.get("http://localhost:8888/times");
-        setTeams(response.data);
-      } catch (error) {
-        if (error.response && error.response.status === 404) {
-          console.log("ainda não há times no banco de dados");
-          return;
-        }
-        console.error("Erro ao carregar os times:", error);
->>>>>>> Stashed changes
       } finally {
         setLoading(false);
       }
@@ -42,17 +31,10 @@ function Home() {
 
     const fetchFans = async () => {
       try {
-<<<<<<< Updated upstream
         const response = await axios.get('http://localhost:8888/torcedores');
         setFans(response.data); // Carrega torcedores
       } catch (error) {
         console.error('Erro ao carregar os torcedores:', error);
-=======
-        const response = await axios.get("http://localhost:8888/torcedores");
-        setFans(response.data); // Carrega torcedores
-      } catch (error) {
-        console.error("Erro ao carregar os torcedores:", error);
->>>>>>> Stashed changes
       }
     };
 
@@ -83,15 +65,7 @@ function Home() {
             {selectedTeam ? (
               <TorcedoresTime team={selectedTeam} onBack={handleBack} />
             ) : (
-<<<<<<< Updated upstream
               <TeamStatics teams={teams} fans={fans} onTeamSelect={handleTeamSelect} />
-=======
-              <TeamStatics
-                teams={teams}
-                fans={fans}
-                onTeamSelect={handleTeamSelect}
-              />
->>>>>>> Stashed changes
             )}
           </>
         ) : (

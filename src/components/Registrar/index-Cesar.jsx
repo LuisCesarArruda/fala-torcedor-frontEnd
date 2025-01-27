@@ -6,19 +6,11 @@ export const Registrar = () => {
   const navigate = useNavigate();
 
   const handleCadastroTime = () => {
-<<<<<<< Updated upstream
     navigate('/time');
   };
 
   const handleCadastroTorcedor = () => {
     navigate('/torcedor');
-=======
-    navigate("/time");
-  };
-
-  const handleCadastroTorcedor = () => {
-    navigate("/torcedor");
->>>>>>> Stashed changes
   };
   return (
     <div className="register-box">
